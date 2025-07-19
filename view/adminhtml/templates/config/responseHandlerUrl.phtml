@@ -1,0 +1,82 @@
+<?php
+/**
+ * Promantus_Benepay Response Handler URL display template.
+ *
+ * @var Promantus\Benepay\Block\Adminhtml\System\Config\Form\ResponseHandlerUrl $block
+ *
+ * @category    Promantus
+ * @package     Promantus_Benepay
+ * @author      Your Name/Company
+ * @copyright   Copyright (c) 2025 Promantus. All rights reserved.
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+
+<?php
+try {
+    $callbackUrl = $block->getCallbackNotificationUrl();
+    $captureUrl = $block->getCaptureNotificationUrl();
+    // $comment = $block->getElement()->getComment(); // Still get comment from the main field
+    $comment = '';
+?>
+    <div class="control-value" style="margin-bottom: 15px;">
+        <label for="benepay_callback_url" class="label">
+            <span><?= $block->escapeHtml(__('Callback Notification URL:')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <input type="text"
+                   id="benepay_callback_url"
+                   value="<?= $block->escapeHtml($callbackUrl) ?>"
+                   class="input-text admin__control-text"
+                   readonly="readonly"
+                   onclick="this.select();"
+                   aria-label="<?= $block->escapeHtmlAttr(__('Callback Notification URL')) ?>"
+                   style="width: 70%; margin-right: 10px;"
+            />
+            <button type="button"
+                    class="action- scalable action-copy"
+                    data-mage-init='{"copyFieldset":{}}'
+                    data-copy-fieldset-text="<?= $block->escapeHtmlAttr($callbackUrl) ?>"
+                    title="<?= $block->escapeHtml(__('Copy Callback URL')) ?>"
+            >
+                <span><?= $block->escapeHtml(__('Copy')) ?></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="control-value">
+        <label for="benepay_capture_url" class="label">
+            <span><?= $block->escapeHtml(__('Capture Notification URL:')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <input type="text"
+                   id="benepay_capture_url"
+                   value="<?= $block->escapeHtml($captureUrl) ?>"
+                   class="input-text admin__control-text"
+                   readonly="readonly"
+                   onclick="this.select();"
+                   aria-label="<?= $block->escapeHtmlAttr(__('Capture Notification URL')) ?>"
+                   style="width: 70%; margin-right: 10px;"
+            />
+            <button type="button"
+                    class="action- scalable action-copy"
+                    data-mage-init='{"copyFieldset":{}}'
+                    data-copy-fieldset-text="<?= $block->escapeHtmlAttr($captureUrl) ?>"
+                    title="<?= $block->escapeHtml(__('Copy Capture URL')) ?>"
+            >
+                <span><?= $block->escapeHtml(__('Copy')) ?></span>
+            </button>
+        </div>
+    </div>
+
+    <?php if ($comment) : ?>
+        <div class="note">
+            <span><?= /* @noEscape */ $comment ?></span>
+        </div>
+    <?php endif; ?>
+
+<?php } catch (\Exception $e) { ?>
+    <div class="message message-error">
+        <div><?= $block->escapeHtml(__('Error generating URLs: %1', $e->getMessage())) ?></div>
+    </div>
+<?php } ?>

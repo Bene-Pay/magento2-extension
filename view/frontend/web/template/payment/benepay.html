@@ -1,0 +1,47 @@
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+        
+        <img data-bind="attr: { src: require.toUrl('Promantus_Benepay/images/benepay-brand.png') }" width="180"
+                 class="payment-icon"/>
+        
+        <label class="label" data-bind="attr: {'for': getCode()}">
+            <!-- data-bind="text: getTitle()" -->
+            <span>All UPI apps, Debit and Credit Cards, and NetBanking accepted</span>
+        </label>
+    </div>
+
+    <div class="payment-method-content">
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="
+                        click: beforePlaceOrder,
+                        attr: {title: $t('Place Order')}
+                        ">
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div>
+    <div style="font-size: 0.95em; color: #555;">
+        All UPI apps, Debit and Credit Cards, and NetBanking accepted<br/>
+        <span style="color: #1a73e8;">Powered by Benepay</span>
+    </div>
+</div> -->

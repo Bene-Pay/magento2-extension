@@ -1,0 +1,13 @@
+{
+  "name": "promantus/benepay",
+  "description": "Benepay Magento Extension for Quick Integration",
+  "type": "composer-plugin",
+  "require": {
+    "magento/framework": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Promantus\\Benepay\\": "app/code/Promantus/Benepay"
+    }
+  }
+}

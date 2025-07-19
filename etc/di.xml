@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <type name="Magento\Payment\Model\Config">
+        <arguments>
+            <argument name="methods" xsi:type="array">
+                <item name="benepay" xsi:type="string">Promantus\Benepay\Model\PaymentMethod</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Preference for the API Service Interface -->
+    <preference for="Promantus\Benepay\Api\CallbackManagementInterface"
+                type="Promantus\Benepay\Model\Api\CallbackManagement"/>
+
+    <!-- Preference for the API Data Interface (Response DTO) -->
+    <preference for="Promantus\Benepay\Api\Data\CallbackResponseInterface"
+                type="Promantus\Benepay\Model\Data\CallbackResponse"/>
+
+    <!--
+        No need for CsrfAwareActionInterface implementation here for webapi.xml service.
+        Magento's Web API framework handles authentication and doesn't rely on form keys
+        for these types of endpoints.
+    -->
+</config>
