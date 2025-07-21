@@ -1,13 +1,29 @@
 {
   "name": "promantus/benepay",
-  "description": "Benepay Magento Extension for Quick Integration",
-  "type": "composer-plugin",
+  "description": "Benepay Magento 2 Extension for Quick Integration",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
+    "php": "^7.4 || ^8.1",
     "magento/framework": "*"
   },
   "autoload": {
     "psr-4": {
-      "Promantus\\Benepay\\": "app/code/Promantus/Benepay"
-    }
+      "Promantus\\Benepay\\": ""
+    },
+    "files": [
+      "registration.php"
+    ]
+  },
+  "extra": {
+    "map": [
+      [
+        "*",
+        "Promantus/Benepay"
+      ]
+    ]
   }
 }
