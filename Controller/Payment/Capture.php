@@ -14,6 +14,8 @@ class Capture extends Action
     protected $orderRepository;
     protected $checkoutSession;
     protected $logger;
+    protected $encryptor;
+    protected $benepayHelper;
 
     public function __construct(
         Context $context,

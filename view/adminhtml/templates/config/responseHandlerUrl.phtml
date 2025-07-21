@@ -35,7 +35,7 @@ try {
             />
             <button type="button"
                     class="action- scalable action-copy"
-                    data-mage-init='{"copyFieldset":{}}'
+                    data-mage-init='{"copyFieldset":{#benepay_callback_url}}'
                     data-copy-fieldset-text="<?= $block->escapeHtmlAttr($callbackUrl) ?>"
                     title="<?= $block->escapeHtml(__('Copy Callback URL')) ?>"
             >
@@ -60,7 +60,7 @@ try {
             />
             <button type="button"
                     class="action- scalable action-copy"
-                    data-mage-init='{"copyFieldset":{}}'
+                    data-mage-init='{"copyFieldset":{#benepay_capture_url}}'
                     data-copy-fieldset-text="<?= $block->escapeHtmlAttr($captureUrl) ?>"
                     title="<?= $block->escapeHtml(__('Copy Capture URL')) ?>"
             >

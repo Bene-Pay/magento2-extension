@@ -17,6 +17,7 @@ class CallbackManagement implements CallbackManagementInterface
     protected $logger;
     protected $encryptor;
     protected $callbackResponseFactory;
+    protected $benepayHelper;
 
     public function __construct(
         OrderRepositoryInterface $orderRepository,

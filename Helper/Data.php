@@ -21,7 +21,13 @@ class Data extends AbstractHelper
     const XML_PATH_CLIENT_SECRET = 'payment/benepay_gateway/secret_key';
     const XML_PATH_BENEPAY_ENCRYPTION_KEY = 'payment/benepay_gateway/benepay_encryption_key';
 
-    protected $encryptor;
+    protected $encryptor;  
+    
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
 
     /**
      * @param Context $context

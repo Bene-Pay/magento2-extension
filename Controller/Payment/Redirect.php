@@ -17,6 +17,12 @@ class Redirect extends Action
 {
     protected $checkoutSession;
     protected $redirectFactory;
+    protected $orderRepository;
+    protected $serializer;
+    protected $request;
+    protected $encryptor;
+    protected $logger;
+    protected $benepayHelper;
 
     public function __construct(
         Context $context,
