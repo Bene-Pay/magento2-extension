@@ -7,7 +7,6 @@ use Magento\Framework\Registry;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\UrlInterface;
-use Magento\Framework\App\Config\Value\ResourceModel\Sync;
 
 class EndpointDisplay extends Value
 {
@@ -32,8 +31,8 @@ class EndpointDisplay extends Value
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
         UrlInterface $urlBuilder,
-        Sync $resource = null,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resourceCollection = null,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         $this->urlBuilder = $urlBuilder;
