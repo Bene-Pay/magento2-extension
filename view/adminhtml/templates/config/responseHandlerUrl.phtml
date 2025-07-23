@@ -31,16 +31,8 @@ try {
                    readonly="readonly"
                    onclick="this.select();"
                    aria-label="<?= $block->escapeHtmlAttr(__('Callback Notification URL')) ?>"
-                   style="width: 70%; margin-right: 10px;"
+                   style="width: 100%; margin-right: 10px;"
             />
-            <button type="button"
-                    class="action- scalable action-copy"
-                    data-mage-init='{"copyFieldset":{"target":"#benepay_callback_url"}}'
-                    data-copy-fieldset-text="<?= $block->escapeHtmlAttr($callbackUrl) ?>"
-                    title="<?= $block->escapeHtml(__('Copy Callback URL')) ?>"
-            >
-                <span><?= $block->escapeHtml(__('Copy')) ?></span>
-            </button>
         </div>
     </div>
 
@@ -56,16 +48,8 @@ try {
                    readonly="readonly"
                    onclick="this.select();"
                    aria-label="<?= $block->escapeHtmlAttr(__('Capture Notification URL')) ?>"
-                   style="width: 70%; margin-right: 10px;"
+                   style="width: 100%; margin-right: 10px;"
             />
-            <button type="button"
-                    class="action- scalable action-copy"
-                    data-mage-init='{"copyFieldset":{"target":"#benepay_capture_url"}}'
-                    data-copy-fieldset-text="<?= $block->escapeHtmlAttr($captureUrl) ?>"
-                    title="<?= $block->escapeHtml(__('Copy Capture URL')) ?>"
-            >
-                <span><?= $block->escapeHtml(__('Copy')) ?></span>
-            </button>
         </div>
     </div>
 
